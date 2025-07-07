@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "SmartReview Pro - Product Insights",
+  "version": "1.0",
+  "description": "Analyze customer feedback for business insights",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://localhost:3000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/*", 
+        "*://*.amazon.in/*", 
+        "*://*.flipkart.com/*",
+        "*://*.myntra.com/*",
+        "*://*.snapdeal.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content-style.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
