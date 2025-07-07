@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SmartReview Pro</h1>
+            <span class="badge">BETA</span>
+        </div>
+        
+        <div class="product-section">
+            <div class="label">Current Product:</div>
+            <div id="productName" class="product-name">No product detected</div>
+        </div>
+
+        <div class="buttons-section">
+            <button id="analyzeBtn" class="btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                Analyze Reviews
+            </button>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="loader"></div>
+            <p>Analyzing sentiments...</p>
+        </div>
+
+        <div id="results" class="results hidden">
+            <div class="score-card">
+                <div class="overall-score">
+                    <div class="score-number" id="scoreNumber">85</div>
+                    <div class="score-label">Overall Score</div>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-label">Positive</div>
+                    <div class="metric-bar">
+                        <div class="bar-fill positive" id="positiveBar"></div>
+                    </div>
+                    <div class="metric-value" id="positiveVal">0%</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Neutral</div>
+                    <div class="metric-bar">
+                        <div class="bar-fill neutral" id="neutralBar"></div>
+                    </div>
+                    <div class="metric-value" id="neutralVal">0%</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Negative</div>
+                    <div class="metric-bar">
+                        <div class="bar-fill negative" id="negativeBar"></div>
+                    </div>
+                    <div class="metric-value" id="negativeVal">0%</div>
+                </div>
+            </div>
+
+            <div class="insights">
+                <h3>💡 Key Insights</h3>
+                <ul id="insightsList"></ul>
+            </div>
+
+            <div class="suggestions">
+                <h3>📈 Recommendations</h3>
+                <ul id="suggestionsList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
